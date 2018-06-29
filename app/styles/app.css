@@ -67,6 +67,8 @@ body{
 	width: 30%;
 	display: list-item;
 	padding: 20px;
+	list-style: none;
+	
 }
 .insertNew p{
 	color: white;

@@ -8,7 +8,7 @@
 	</body>
 
 	<div class="title"><h1>Book Details</h1></div>
-	<form {{action 'saveBook' model on='submit'}}>
+	<form {{action 'saveBook' model on='submit' enable=false}}>
 		<div class="content">
 				<img src={{model.imgUrl}}>
 				<div class="data">
