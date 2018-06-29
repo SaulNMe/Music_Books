@@ -8,7 +8,11 @@
 	</header>
 	</body>
 <div class="title"><h1>Books</h1></div>
-
+<p>
+	{{#link-to 'authors'}}
+		Authors
+	{{/link-to}}
+</p>
 <div class="content">
 	{{#each model as |book|}}
 			<img src={{book.imgUrl}}>
@@ -32,6 +36,6 @@
 		<p>Price: {{input type='text' value=price}}</p> 
 		<p>URL: {{input type='text' value=imgUrl}}</p> 
 		<br>
-		<button class="btn" type="submit">Create Book</button>
+		<button class="btn" type="submit" >Create Book</button>
 </form>
 </div>

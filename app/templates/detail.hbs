@@ -16,8 +16,8 @@
 				<p>Author: {{input type="text" value=model.author}}</p>
 				<p>Price: {{input type="text" value=model.price}}</p>
 				<p>Url: {{input type="text" value=model.imgUrl}} </p>
-				<button class="btn" type="submit">Edit</button >
-				<button class="btn" {{action 'deleteBook' model on='click'}}>
+				<button class="btn" type="submit" disabled={{if model.isSaving 'true' ''}} >Edit</button >
+				<button class="btn" disabled={{if model.isSaving 'true' ''}} {{action 'deleteBook' model on='click'}}>
 					Delete
 				</button>
 			</div>
