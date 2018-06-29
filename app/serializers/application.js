@@ -1,8 +1,6 @@
-import DS from 'ember-data';
-import { underscore } from '@ember/string'
-export default DS.RESTSerializer.extend({
-	
-	keyForAttribute(attr){
-		return underscore(attr);
-	}
+// import DS from 'ember-data';
+// import {underscore} from '@ember/string';
+import { ActiveModelSerializer } from 'active-model-adapter';
+export default ActiveModelSerializer.extend({
+
 });

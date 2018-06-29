@@ -1,1 +1,26 @@
-<h1>jejejej</h1>
+<body>
+	<header>
+		<div class="wrapper">
+			<img src="http://www.iespuntalarga.es/wp-content/uploads/2017/07/libro.png">
+			<h1 {{action 'comeBack' on='click'}} >BookStore</h1>
+		</div>
+	</header>
+	</body>
+
+	<div class="title"><h1>Book Details</h1></div>
+	<form {{action 'saveBook' model on='submit'}}>
+		<div class="content">
+				<img src={{model.imgUrl}}>
+				<div class="data">
+				<p>Name: {{input type="text" value=model.title}}</p>
+				<p>Author: {{input type="text" value=model.author}}</p>
+				<p>Price: {{input type="text" value=model.price}}</p>
+				<p>Url: {{input type="text" value=model.imgUrl}} </p>
+				<button class="btn" type="submit">Edit</button >
+				<button class="btn" {{action 'deleteBook' model on='click'}}>
+					Delete
+				</button>
+			</div>
+		</div>
+	
+	</form>

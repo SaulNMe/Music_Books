@@ -2,6 +2,6 @@ import Route from '@ember/routing/route';
 
 export default Route.extend({
 	model(){
-		return this.store.findAll('music-books');
+		return this.store.findAll('music-book');
 	}
 });
