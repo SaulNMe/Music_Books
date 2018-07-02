@@ -43,6 +43,24 @@ body{
 	list-style: none;
 	border-radius: 10%;
 }
+.title ul{
+	list-style: none;
+	display: inline-block;
+}
+.title h1, a{
+	color: #fff;
+	text-decoration:none;
+	padding: 10px 20px; 
+	line-height: normal;
+	font-size: 20px;
+	font-weight: bold;
+	-webkit-transition: all 500ms ease;
+	-o-transition:all 500ms ease;
+}
+.title a:hover{
+	background: #FF5C3C;
+	border-radius: 50px;
+}
 .content{
 	scroll-behavior: smooth;
 	padding: 5px;

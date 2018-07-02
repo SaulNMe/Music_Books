@@ -1,9 +1,24 @@
 <div class="content">
 	{{#each model as |author|}}
 			<div class="data">
-				<p>NAME: {{author.firstName}}</p>
-				<p>{{author.fullName}}</p>
+				<p>Nombre: {{author.fullName}}</p>
+				<a href=>
+					{{#link-to 'detail-author' author.id}}
+						Edit
+					{{/link-to}}
+				</a>
 			</div>
 	{{/each}}
+</div>
+<div class="insertNew">
+	<h1>Insert New</h1>	
+<form {{action 'createAuthor' author on='submit'}}>
+		<p>First Name:   {{input type='text' value=firstName}}</p> 
+		<p>Last Name: {{input type='text' value=lastName}}</p> 
+		<p>Nickname: {{input type='text' value=nickname}}</p> 
+		<p>Age: {{input type='text' value=age}}</p> 
+		<br>
+		<button class="btn" type="submit" >Create Author</button>
+</form>
 </div>
 

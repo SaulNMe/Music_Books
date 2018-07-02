@@ -9,6 +9,7 @@ Router.map(function() {
   this.route('main',{path: '/'});
   this.route('detail', {path: 'detail/:id'});
   this.route('authors');
+  this.route('detail-author',{path: 'detail/:id'});
 });
 
 export default Router;
