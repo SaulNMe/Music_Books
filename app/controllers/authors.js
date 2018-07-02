@@ -1,5 +1,4 @@
 import Controller from '@ember/controller';
-
 export default Controller.extend({
 	actions:{
 		createAuthor(){
@@ -15,4 +14,5 @@ export default Controller.extend({
 			this.set('age');
 		}
 	}
+
 });

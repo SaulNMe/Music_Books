@@ -15,6 +15,7 @@
 				<p>Last Name: {{input type="text" value=model.lastName}}</p>
 				<p>NickName: {{input type="text" value=model.nickname}}</p>
 				<p>Age: {{input type="text" value=model.age}} </p>
+				<p>Full Name: {{input type="text" value = model.fullName}}</p>
 				<button class="btn" type="submit" disabled={{if model.isSaving 'true' ''}} >Edit</button >
 				<button class="btn" disabled={{if model.isSaving 'true' ''}} {{action 'deleteBook' model on='click'}}>
 					Delete

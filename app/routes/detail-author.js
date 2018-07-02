@@ -1,5 +1,5 @@
 import Route from '@ember/routing/route';
-
+import {observer} from '@ember/object'
 export default Route.extend({
 	model(params){
 		return this.store.findRecord('author',params.id);
