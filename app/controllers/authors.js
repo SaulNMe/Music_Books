@@ -12,6 +12,12 @@ export default Controller.extend({
 			this.set('lastName');
 			this.set('nickname');
 			this.set('age');
+		},
+		onAuthorDelete(author){
+			let answer = confirm('¿Estás seguro de que quieres eliminar este registro?');
+			if(answer === true){
+			author.destroyRecord();
+			}
 		}
 	}
 

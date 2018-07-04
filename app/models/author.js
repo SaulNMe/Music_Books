@@ -14,10 +14,9 @@ export default DS.Model.extend({
 		
 	}),
 	changedName: observer('fullName',function(){
-		const fullNameStored = this.get('fullName');
-		if(this.get('fullName')){
+		// if(this.get('fullName')){
 			console.log(`Now my name is ${this.get('fullName')}`);
-		}
+		// }
 	})
 
 });

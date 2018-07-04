@@ -1,7 +1,10 @@
 <div class="content">
 	{{#each model as |author|}}
 			<div class="data">
-				<p>Nombre: {{author.fullName}}</p>
+			{{delete-button
+			author=author
+			onAuthorDelete=(action 'onAuthorDelete')}}
+				{{!-- <p>Nombre: {{author.fullName}}</p> --}}
 				<a href=>
 					{{#link-to 'detail-author' author.id}}
 						Edit
@@ -10,6 +13,7 @@
 			</div>
 	{{/each}}
 </div>
+
 <div class="insertNew">
 	<h1>Insert New</h1>	
 <form {{action 'createAuthor' author on='submit'}}>
