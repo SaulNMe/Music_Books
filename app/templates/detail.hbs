@@ -1,25 +1,38 @@
 <body>
 	<header>
 		<div class="wrapper">
-			<img src="http://www.iespuntalarga.es/wp-content/uploads/2017/07/libro.png">
-			<h1 {{action 'comeBack' on='click'}} >BookStore</h1>
+			<img src="http://www.iespuntalarga.es/wp-content/uploads/2017/07/libro.png"> 
+			<div class="shopping">
+				<p>Bienvenido {{currentUser.username}}</p>
+				<a href=>
+					{{#link-to 'shopping-cart'}}
+						<img class="cart" src="http://icons-for-free.com/free-icons/png/512/877015.png">
+					{{/link-to}}
+				</a>
+			</div>
+			<a href=>
+				{{#link-to 'main'}}
+					BookStore
+				{{/link-to}}
+			</a>
 		</div>
 	</header>
-	</body>
+</body>
 
 	<div class="title"><h1>Book Details</h1></div>
 	<form {{action 'saveBook' model on='submit'}}>
 		<div class="content">
 				<img src={{model.imgUrl}}>
 				<div class="data">
-				<p>Name: {{input type="text" value=model.title}}</p>
-				<p>Author: {{input type="text" value=model.author}}</p>
-				<p>Price: {{input type="text" value=model.price}}</p>
-				<p>Url: {{input type="text" value=model.imgUrl}} </p>
-				<button class="btn" type="submit" disabled={{if model.isSaving 'true' ''}} >Edit</button >
-				<button class="btn" disabled={{if model.isSaving 'true' ''}} {{action 'deleteBook' model on='click'}}>
-					Delete
-				</button>
+				<p>Name: {{input type="text" value=model.title disabled='true'}}</p>
+				<p>Author: {{input type="text" value=model.author disabled='true'}}</p>
+				<p>Price: {{input type="text" value=model.price disabled='true'}}</p>
+				<p>Url: {{input type="text" value=model.imgUrl disabled='true'}} </p>
+				<button class="btn" {{action 'buyBook' model on='click'}}>Add to cart</button>
+				{{!-- <button class="btn" type="submit" disabled={{if model.isSaving 'true' ''}} >Edit</button >
+				<button class="btn" disabled={{if model.isSaving 'true' ''}} {{action 'deleteBook' model on='click'}}> --}}
+				{{!-- 	Delete
+				</button> --}}
 			</div>
 		</div>
 	

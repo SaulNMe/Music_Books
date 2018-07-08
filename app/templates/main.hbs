@@ -1,15 +1,24 @@
-	<body>
+<body>
 	<header>
 		<div class="wrapper">
-			<img src="http://www.iespuntalarga.es/wp-content/uploads/2017/07/libro.png">
+			<img src="http://www.iespuntalarga.es/wp-content/uploads/2017/07/libro.png"> 
+			<div class="shopping">
+				<p>Bienvenido {{currentUser.username}}</p>
+				<a href=>
+					{{#link-to 'shopping-cart'}}
+						<img class="cart" src="http://icons-for-free.com/free-icons/png/512/877015.png">
+					{{/link-to}}
+				</a>
+			</div>
 			<h1>BookStore</h1>
 		</div>
 	</header>
-	</body>
+</body>
 <div class="title">
 	<ul>
 		<li><h1>Books</h1></li>
 		<li>
+			{{!-- <button {{action 'linkAuthor' on='click'}}>Authors</button> --}}
 			<a href=>
 				{{#link-to 'authors'}}
 					Authors
@@ -30,7 +39,7 @@
 				<p>Price: {{book.price}} </p>
 				<a href=>
 					{{#link-to 'detail' book.id}}
-						Edit
+						More
 					{{/link-to}}
 				</a>
 			</div>

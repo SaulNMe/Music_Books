@@ -1,0 +1,14 @@
+<div class="inserNew">
+	
+<form {{action 'login' username password on='submit'}}>
+	<p>User:</p>
+	{{input type="text" value=username}}
+	<p>Password:</p>
+	{{input type="password" value=password}}
+	<button class="btn">Log in</button>
+</form>
+</div>
+{{!-- {{input type="text" value=username}}<br>
+{{input type="password" value=password}}<br>
+
+<button {{action 'login' username password on='click'}}>Log in</button> --}}

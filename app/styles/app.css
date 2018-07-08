@@ -25,6 +25,11 @@ body{
 	line-height: 0;
 	padding-bottom: 5px;
 }
+.wrapper a{
+	font-size: 50px;
+	line-height: 0;
+	padding-bottom: 5px;
+}
 .wrapper img:hover, h1:hover{
 	-webkit-filter: contrast(170%);	
 	cursor: pointer;
@@ -62,13 +67,25 @@ body{
 	border-radius: 50px;
 }
 .content{
-	scroll-behavior: smooth;
 	padding: 5px;
 	background: rgba(30,0,0,0.8);
 	display: flex;
 	margin: auto;
 	margin-left: 73px;
 	margin-right: 73px;
+}
+
+.shopping{
+	align-content: right;
+	display: flex;
+	padding: 1px;
+}
+.shopping p{
+	font-size: 20px;
+}
+.shopping img{
+	width: 60px;
+	right: 10px;
 }
 .content img{
 	width: 150px;
@@ -130,4 +147,8 @@ body{
 .btn:hover{
 	background: #FF5C3C;
 	border-radius: 50px;
+}
+.shop{
+	padding: 15px;
+	color: white;
 }

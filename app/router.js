@@ -6,10 +6,12 @@ const Router = EmberRouter.extend({
   rootURL: config.rootURL
 });
 Router.map(function() {
-  this.route('main',{path: '/'});
+  this.route('main');
   this.route('detail', {path: 'detail/:id'});
   this.route('authors');
-  this.route('detail-author',{path: 'detail/:id'});
+  this.route('detail-author',{path: 'detail-author/:id'});
+  this.route('shopping-cart');
+  this.route('login',{path: '/'});
 });
 
 export default Router;

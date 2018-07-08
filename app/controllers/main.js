@@ -1,6 +1,8 @@
 import Controller from '@ember/controller';
+import { inject as service } from '@ember/service';
 
 export default Controller.extend({
+	currentUser: service(),
 	actions:{
 		createBook(){
 			let title = this.get('title');
@@ -13,7 +15,9 @@ export default Controller.extend({
 			this.set('title','');
 			this.set('author','');
 			this.set('price','');
-
+		}, 
+		linkAuthor(){
+			this.transitionToRoute('authors');
 		}
 	}
 
