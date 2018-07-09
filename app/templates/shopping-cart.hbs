@@ -1,10 +1,21 @@
-<div class="shop">	
-	{{#each shoppingCart.musicBooks as |book|}}
-		<p>Title: {{book.title}}</p>
+<div class="content">	
+		{{#each shoppingCart.musicBooks as |book|}}
+			<img src={{book.imgUrl}}>
+			<div class="data">
+				<p>Title: {{book.title}}</p>
+				<p>Author: {{book.author}} </p>
+				<p>Price: {{book.price}} </p>
+			</div>
 	{{/each}}
+</div>
+<div class="shop">
 	<p>Total: {{sum}} </p>
 	<p>Average: {{get-avg shoppingCart.musicBooks}} </p>
 </div>
+
+
+
+
 
 {{!-- {{#each prices as |price|}}
 	<p>{{price}}</p>

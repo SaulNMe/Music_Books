@@ -6,10 +6,9 @@ import { computed } from '@ember/object';
 export default Controller.extend({
 	shoppingCart: service(),
 	sum: computed(function () {
-		console.log('calculating sum');
 		let prices = this.get('shoppingCart').get('musicBooks').map((musicBook) => {
 			let price = musicBook.get('price');
-			return price;
+				return price;
 		})
 		return getSum(prices);
 	}).volatile()

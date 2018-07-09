@@ -24,15 +24,15 @@
 		<div class="content">
 				<img src={{model.imgUrl}}>
 				<div class="data">
-				<p>Name: {{input type="text" value=model.title disabled='true'}}</p>
-				<p>Author: {{input type="text" value=model.author disabled='true'}}</p>
-				<p>Price: {{input type="text" value=model.price disabled='true'}}</p>
-				<p>Url: {{input type="text" value=model.imgUrl disabled='true'}} </p>
+				<p>Name: {{input type="text" value=model.title }}</p>
+				<p>Author: {{input type="text" value=model.author.fullName }}</p>
+				<p>Price: {{input type="text" value=model.price }}</p>
+				<p>Url: {{input type="text" value=model.imgUrl }} </p>
 				<button class="btn" {{action 'buyBook' model on='click'}}>Add to cart</button>
-				{{!-- <button class="btn" type="submit" disabled={{if model.isSaving 'true' ''}} >Edit</button >
-				<button class="btn" disabled={{if model.isSaving 'true' ''}} {{action 'deleteBook' model on='click'}}> --}}
-				{{!-- 	Delete
-				</button> --}}
+				<button class="btn" type="submit" disabled={{if model.isSaving 'true' ''}} >Edit</button >
+				<button class="btn" disabled={{if model.isSaving 'true' ''}} {{action 'deleteBook' model on='click'}}>
+					Delete
+				</button>
 			</div>
 		</div>
 	

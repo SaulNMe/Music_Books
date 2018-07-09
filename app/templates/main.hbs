@@ -35,7 +35,7 @@
 			<img src={{book.imgUrl}}>
 			<div class="data">
 				<p>Name: {{book.title}}</p>
-				<p>Author: {{book.author}} </p>
+				<p>Author: {{book.author.fullName}} </p>
 				<p>Price: {{book.price}} </p>
 				<a href=>
 					{{#link-to 'detail' book.id}}
