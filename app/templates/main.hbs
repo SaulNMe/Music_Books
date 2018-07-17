@@ -1,48 +1,31 @@
-<body>
-	<header>
-		<div class="wrapper">
-			<img src="http://www.iespuntalarga.es/wp-content/uploads/2017/07/libro.png"> 
-			<div class="shopping">
-				<p>Bienvenido {{currentUser.username}}</p>
-				<a href=>
-					{{#link-to 'shopping-cart'}}
-						<img class="cart" src="http://icons-for-free.com/free-icons/png/512/877015.png">
-					{{/link-to}}
-				</a>
-			</div>
-			<h1>BookStore</h1>
-		</div>
-	</header>
-</body>
-<div class="title">
-	<ul>
-		<li><h1>Books</h1></li>
-		<li>
-			{{!-- <button {{action 'linkAuthor' on='click'}}>Authors</button> --}}
-			<a href=>
-				{{#link-to 'authors'}}
-					Authors
-				{{/link-to}}
-			</a>
-		</li>
-	</ul>
-</div>
+{{render-header}}
+
 	
 <p>
 </p>
-<div class="content">
+<div class="main-content">
 	{{#each model as |book|}}
-			<img src={{book.imgUrl}}>
-			<div class="data">
-				<p>Name: {{book.title}}</p>
-				<p>Author: {{book.author.fullName}} </p>
-				<p>Price: {{book.price}} </p>
-				<a href=>
-					{{#link-to 'detail' book.id}}
-						More
-					{{/link-to}}
-				</a>
+		<div class="content">
+			<div class="content-img">
+					<img src={{book.imgUrl}}>
 			</div>
+			<div class="content-data">
+				<p>Name: 
+					<a href=>
+						{{#link-to 'detail' book.id}}
+							{{book.title}}
+						{{/link-to}}
+					</a>
+				</p>
+				<p>Author: 
+					<a href=>
+						{{#link-to 'detail' book.id}}
+							{{book.author.fullName}}
+						{{/link-to}}
+					</a> 
+				</p>
+			</div>
+		</div>
 	{{/each}}
 </div>
 <div class="insertNew">

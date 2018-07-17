@@ -1,34 +1,27 @@
-<body>
-	<header>
-		<div class="wrapper">
-			<img src="http://www.iespuntalarga.es/wp-content/uploads/2017/07/libro.png"> 
-			<div class="shopping">
-				<p>Bienvenido {{currentUser.username}}</p>
-				<a href=>
-					{{#link-to 'shopping-cart'}}
-						<img class="cart" src="http://icons-for-free.com/free-icons/png/512/877015.png">
-					{{/link-to}}
-				</a>
-			</div>
-			<a href=>
-				{{#link-to 'main'}}
-					BookStore
-				{{/link-to}}
-			</a>
-		</div>
-	</header>
-</body>
+{{render-header}}
 
 	<div class="title"><h1>Book Details</h1></div>
-	<form {{action 'saveBook' model on='submit'}}>
+	<form {{action 'saveBook' model.musicBook on='submit'}}>
 		<div class="content">
-				<img src={{model.imgUrl}}>
+				<img src={{model.musicBook.imgUrl}}>
 				<div class="data">
-				<p>Name: {{input type="text" value=model.title }}</p>
-				<p>Author: {{input type="text" value=model.author.fullName }}</p>
-				<p>Price: {{input type="text" value=model.price }}</p>
-				<p>Url: {{input type="text" value=model.imgUrl }} </p>
-				<button class="btn" {{action 'buyBook' model on='click'}}>Add to cart</button>
+				<p>Name: {{input type="text" value=model.musicBook.title }}</p>
+				{{!-- <p>Author: {{input type="d" value=model.musicBook.author.fullName}}</p> --}}
+				<p>
+					Author: {{model.musicBook.author.fullName}}
+					<button {{action 'showAuthors' on='click'}}>Cambiar Author</button>
+				</p>
+				{{#if isChangingAuthor}}
+				<p>Selecciona un author</p>
+				{{#each model.authors as |author|}}
+					<p>
+					<a href="#" {{action 'selectAuthor' author on='click'}} >{{author.fullName}}</a>
+					</p>
+				{{/each}}
+				{{/if}}
+				<p>Price: {{input type="text" value=model.musicBook.price }}</p>
+				<p>Url: {{input type="text" value=model.musicBook.imgUrl }} </p>
+				<button class="btn" {{action 'buyBook' model.book on='click'}}>Add to cart</button>
 				<button class="btn" type="submit" disabled={{if model.isSaving 'true' ''}} >Edit</button >
 				<button class="btn" disabled={{if model.isSaving 'true' ''}} {{action 'deleteBook' model on='click'}}>
 					Delete

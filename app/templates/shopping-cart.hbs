@@ -1,3 +1,4 @@
+{{render-header}}
 <div class="content">	
 		{{#each shoppingCart.musicBooks as |book|}}
 			<img src={{book.imgUrl}}>
@@ -12,6 +13,8 @@
 	<p>Total: {{sum}} </p>
 	<p>Average: {{get-avg shoppingCart.musicBooks}} </p>
 </div>
+
+
 
 
 

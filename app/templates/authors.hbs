@@ -1,8 +1,9 @@
+{{render-header}}
+
 <div class="content">
 	{{#each model as |author|}}
 			<div class="data">
-			{{delete-button
-			author=author
+			{{delete-button author=author
 			onAuthorDelete=(action 'onAuthorDelete')}}
 				{{!-- <p>Nombre: {{author.fullName}}</p> --}}
 				<a href=>

@@ -1,8 +1,7 @@
 import Controller from '@ember/controller';
 import { inject as service } from '@ember/service';
-
 export default Controller.extend({
-	currentUser: service(),
+	// currentUser: service(),
 	actions:{
 		createBook(){
 			let title = this.get('title');

@@ -1,8 +1,14 @@
 import Route from '@ember/routing/route';
 import { inject as service } from '@ember/service';
+import {hash} from 'rsvp';
 export default Route.extend({
 	model(params){
-		return this.store.findRecord('music-book',params.id);
+		let musicBook = this.store.findRecord('musicBook', params.id);
+		let authors = this.store.findAll('author');
+		return hash({
+			musicBook,
+			authors
+		});
 	},
 	// musicBooks: service('shopping-cart')
 	shoppingCart: service(),
@@ -11,7 +17,7 @@ export default Route.extend({
 			book.save();
 		},
 		willTransition(){
-			let book = this.get('controller.model');
+			let book = this.get('controller.model.musicBook');
 			book.rollbackAttributes();
 		},
 		comeBack(){
