@@ -4,7 +4,10 @@
 		    <div class="card-panel grey lighten-5 z-depth-1">
 		      <div class="row valign-wrapper">
 		        <div class="col s2">
-		          <img src={{book.imgUrl}} class="circle responsive-img"> <!-- notice the "circle" class -->
+		          {{!-- <img src={{book.imgUrl}} class="circle responsive-img"> <!-- notice the "circle" class --> --}}
+		          <div class="avatar" style={{background-image book.imgUrl}}>
+		          	
+		          </div>
 		        </div>
 		        <div class="col s8">
 		          <span class="black-text">
@@ -16,11 +19,14 @@
 		          </span>
 		        </div>
 		        <div class="col s2">
-		        	<img src="https://image.flaticon.com/icons/png/128/483/483345.png" class="responsive-img" width="80%">
+		        	<i class="material-icons">
+						more_vert
+					</i>
 		        </div>
 		      </div>
 		    </div>
 		</div>
 	{{/link-to}}
  {{/each}}
- <a class="btn-floating btn-large waves-effect waves-light" {{action 'addBook' on='click'}}><i class="material-icons">+</i></a>
+ {{!-- <a class="btn-floating btn-large waves-effect waves-light" {{action 'addBook' on='click'}}><i class="material-icons">+</i></a> --}}
+ <a class="btn-floating btn-large waves-effect waves-light fixed-action-btn" {{action 'addBook' on='click'}}><i class="material-icons">add</i></a>

@@ -22,7 +22,7 @@ Router.map(function() {
     this.route('detail-author',{path: 'authors/detail/:id'});
     this.route('add-book',{path: 'books/add-book'});
     this.route('add-author',{path: 'authors/add-author'});
-    this.route('add-sale');
+    this.route('add-sale',{path: 'sales/add-sale'});
   });
 });
 

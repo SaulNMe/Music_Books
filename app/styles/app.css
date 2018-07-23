@@ -39,6 +39,13 @@ nav {
 	margin-right: 5px;
 	margin-bottom: 5px;
 }
+.avatar{
+	border-radius: 50%;
+	width: 50px;
+	height: 50px;
+	background-position: center;
+	background-size: cover;
+}
 
 /*
 *{

@@ -6,22 +6,26 @@
 			</div>
 		</div>
 		<div class="row">
-			<div class="col s7">				
-		    	{{input type="text" value=firstName placeholder="Select a book"}}
-			</div>
-			<div class="col s4">				
-		    	{{input type="number" value=firstName placeholder="Quantity"}}
-			</div>
-			<div class="col s1">
-				<a href="#"{{action 'deleteItem' on='click'}}>
-				<img src="https://image.flaticon.com/icons/svg/64/64022.svg" class="responsive-img">
-				</a>
+			<div class="col s12">				
+				<div class="col s7">				
+			    	{{input type="text" value=firstName placeholder="Select a book"}}
+				</div>
+				<div class="col s3">				
+			    	{{input type="number" value=firstName placeholder="Quantity"}}
+				</div>
+				<div class="col s2">
+					<a href="#"{{action 'deleteItem' on='click'}}>
+					<i class="material-icons">
+						delete_forever
+					</i>
+					</a>
+				</div>
 			</div>
 		</div>
 		<div class="row">
 			<div class="col s12">
 				<div class="col s4">
-					<a class="waves-effect waves-light btn" {{action 'createBook' on='click'}}>Add Book</a>
+					<a class="waves-effect waves-light btn" {{action 'createBook' on='click'}}>Add</a>
 				</div>
 				<div class="col s8">
 				</div>
