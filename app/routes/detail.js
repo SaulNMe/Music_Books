@@ -15,6 +15,7 @@ export default Route.extend({
 	actions:{
 		saveBook(book){
 			book.save();
+			this.transitionTo('main');
 		},
 		willTransition(){
 			let book = this.get('controller.model.musicBook');
@@ -24,14 +25,14 @@ export default Route.extend({
 			this.transitionTo('main')
 		},
 		deleteBook(model){
-			model.destroyRecord().then(()=>{
+			model.musicBook.destroyRecord().then(()=>{
 				this.transitionTo('main');
 			});
 		},
 		buyBook(model){
-			this.get('shoppingCart').get('musicBooks').pushObject(model);
+			this.get('shoppingCart').get('musicBooks').pushObject(model.musicBook);
 			// this.get('shoppingCart').notifyPropertyChange('musicBooks');
-			alert(model.price);
+			alert('Added to cart');
 			// console.log(model.price);
 		}
 	}

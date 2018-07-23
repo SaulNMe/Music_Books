@@ -1,0 +1,58 @@
+<div class="row">
+    <form class="col s12">
+	    <div class="row">
+	      	<div class="input-field col s12">
+		          <p>Title</p>	
+		         {{input type="text" value=title}}
+	    	</div>
+		</div>
+		<div class="row">
+	      	<div class="input-field col s12">
+	      		<div class="row">
+	      			<div class="col s12">		      				
+		          		<p>Author</p>	
+	      			</div>
+	      		</div>
+	      		<div class="row">		      			
+		        	<div class="col s8">			        		
+		        		{{input type="text" value=model.musicBook.author.fullName}}
+		        	</div>
+		        	<div class="col s4">
+		        		<a class="waves-effect waves-light btn" {{action 'showAuthors' on='click'}}>Choose</a>			        		
+		        	</div>
+		        	{{#if isChangingAuthor}}
+		        		<div class="col s12">
+							<p>Select an author</p>
+							{{#each model.authors as |author|}}
+								<p width="auto">
+									<a href="#" {{action 'selectAuthor' author on='click'}} >{{author.fullName}}</a>
+								</p>
+							{{/each}}
+		        		</div>
+					{{/if}}			        		
+	      		</div>
+	    	</div>
+		</div>
+		<div class="row">
+	      	<div class="input-field col s12">
+		          <p>Price</p>	
+		         {{input type="text" value=price}}
+	    	</div>
+		</div>
+		<div class="row">
+	      	<div class="input-field col s12">
+		          <p>Image Url</p>	
+		         {{input type="text" value=imgUrl}}
+	    	</div>
+		</div>
+		<div class="row">
+			<div class="col s12">
+				<div class="col s4">
+					<a class="waves-effect waves-light btn" {{action 'createAuthor' model.musicBook on='click'}}>Guardar</a>
+				</div>
+				<div class="col s8">
+				</div>
+			</div>
+		</div>
+    </form>
+ </div>

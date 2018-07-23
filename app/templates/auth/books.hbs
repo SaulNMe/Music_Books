@@ -1,0 +1,26 @@
+ {{#each model as |book|}}
+	{{#link-to 'auth.detail-book' book.id}}
+		<div class="col s12">
+		    <div class="card-panel grey lighten-5 z-depth-1">
+		      <div class="row valign-wrapper">
+		        <div class="col s2">
+		          <img src={{book.imgUrl}} class="circle responsive-img"> <!-- notice the "circle" class -->
+		        </div>
+		        <div class="col s8">
+		          <span class="black-text">
+		            	{{book.title}}
+		          </span>
+		          <br>
+		          <span class="grey-text">
+		          		{{book.author.fullName}}
+		          </span>
+		        </div>
+		        <div class="col s2">
+		        	<img src="https://image.flaticon.com/icons/png/128/483/483345.png" class="responsive-img" width="80%">
+		        </div>
+		      </div>
+		    </div>
+		</div>
+	{{/link-to}}
+ {{/each}}
+ <a class="btn-floating btn-large waves-effect waves-light" {{action 'addBook' on='click'}}><i class="material-icons">+</i></a>

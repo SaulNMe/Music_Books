@@ -1,0 +1,12 @@
+{{render-header2}}
+<div class="insertNew">
+	<h1>Insert New</h1>	
+	<form {{action 'createBook' book on='submit'}}>
+			<p>Title:   {{input type='text' value=title}}</p> 
+			<p>Author: {{input type='text' value=author}}</p> 
+			<p>Price: {{input type='text' value=price}}</p> 
+			<p>URL: {{input type='text' value=imgUrl}}</p> 
+			<br>
+			<button class="btn" type="submit" >Create Book</button>
+	</form>
+</div>

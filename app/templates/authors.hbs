@@ -1,11 +1,41 @@
 {{render-header}}
 
-<div class="content">
+<div class="main-content">
+	{{#each model as |author|}}
+		{{#link-to 'detail-author' author.id}}
+		<div class="content">
+			<div class="content-img">
+				<img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQvR0y-fGa6vQOW2Mc2w-xLUz25qDoy-Oe1gbWXlhpaVeuMlfzDfQ">
+			</div>
+			<div class="content-data">
+				<div class="name-author">
+					<p>
+						<a href="#">
+							{{author.fullName}}
+						</a>
+					</p>
+				</div>
+				<div class="nickname-author">
+					<p>
+						<a href="#">
+							{{author.nickname}}
+						</a>
+					</p>
+				</div>
+			</div>
+			<div class="author-more">
+				<img src="https://d30y9cdsu7xlg0.cloudfront.net/png/384289-200.png" alt="">
+			</div>
+		</div>
+		{{/link-to}}
+	{{/each}}
+</div>
+{{!-- <div class="content">
 	{{#each model as |author|}}
 			<div class="data">
 			{{delete-button author=author
 			onAuthorDelete=(action 'onAuthorDelete')}}
-				{{!-- <p>Nombre: {{author.fullName}}</p> --}}
+				<p>Nombre: {{author.fullName}}</p>
 				<a href=>
 					{{#link-to 'detail-author' author.id}}
 						Edit
@@ -13,17 +43,10 @@
 				</a>
 			</div>
 	{{/each}}
-</div>
+</div> --}}
 
-<div class="insertNew">
-	<h1>Insert New</h1>	
-<form {{action 'createAuthor' author on='submit'}}>
-		<p>First Name:   {{input type='text' value=firstName}}</p> 
-		<p>Last Name: {{input type='text' value=lastName}}</p> 
-		<p>Nickname: {{input type='text' value=nickname}}</p> 
-		<p>Age: {{input type='text' value=age}}</p> 
-		<br>
-		<button class="btn" type="submit" >Create Author</button>
-</form>
-</div>
+
+
+<button class="btn" {{action 'createAuthor' on='click'}}>+</button>
+
 

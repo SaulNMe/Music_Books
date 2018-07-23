@@ -1,22 +1,23 @@
-<body>
-	<header>
-		<div class="wrapper">
-			<img src="http://www.iespuntalarga.es/wp-content/uploads/2017/07/libro.png">
-			<h1 {{action 'comeBack' on='click'}} >BookStore</h1>
-		</div>
-	</header>
-	</body>
-
-	<div class="title"><h1>Author Info</h1></div>
+{{render-header2}}
 	<form {{action 'saveAuthor' model on='submit'}}>
 		<div class="content">
 				<div class="data">
-				<p>First Name: {{input type="text" value=model.firstName}}</p>
-				<p>Last Name: {{input type="text" value=model.lastName}}</p>
-				<p>NickName: {{input type="text" value=model.nickname}}</p>
-				<p>Age: {{input type="text" value=model.age}} </p>
-				<p>Full Name: {{input type="text" value = model.fullName}}</p>
-				<button class="btn" type="submit" disabled={{if model.isSaving 'true' ''}} >Edit</button >
+				<p>First Name: <br> 
+					{{input type="text" value=model.firstName class="inputs-author" }}
+				</p>
+				<p>Last Name: <br> 
+					{{input type="text" value=model.lastName class="inputs-author"}}
+				</p>
+				<p>NickName: <br> 
+					{{input type="text" value=model.nickname class="inputs-author"}}
+				</p>
+				<p>Age: <br> 
+					{{input type="number" value=model.age class="inputs-author"}} 
+				</p>
+				<p>Full Name: <br> 
+					{{input type="text" value = model.fullName class="inputs-author"}}
+				</p>
+				<button class="btn" type="submit" disabled={{if model.isSaving 'true' ''}} >Save</button >
 				<button class="btn" disabled={{if model.isSaving 'true' ''}} {{action 'deleteBook' model on='click'}}>
 					Delete
 				</button>

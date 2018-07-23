@@ -1,0 +1,37 @@
+<div class="row">
+    <form class="col s12">
+	    <div class="row">
+	      	<div class="input-field col s12">
+		          <p>First Name</p>	
+		         {{input type="text" value=firstName}}
+	    	</div>
+		</div>
+		<div class="row">
+	      	<div class="input-field col s12">
+		          <p>Last Name</p>	
+		         {{input type="text" value=lastName}}
+	    	</div>
+		</div>
+		<div class="row">
+	      	<div class="input-field col s12">
+		          <p>Nickname</p>	
+		         {{input type="text" value=nickname}}
+	    	</div>
+		</div>
+		<div class="row">
+	      	<div class="input-field col s12">
+		          <p>Age</p>	
+		         {{input type="text" value=model.age}}
+	    	</div>
+		</div>
+		<div class="row">
+			<div class="col s12">
+				<div class="col s4">
+					<a class="waves-effect waves-light btn" {{action 'createAuthor' model on='click'}}>Save</a>
+				</div>
+				<div class="col s8">
+				</div>
+			</div>
+		</div>
+    </form>
+ </div>

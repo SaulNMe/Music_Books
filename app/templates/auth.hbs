@@ -1,0 +1,21 @@
+<div class="main-header">
+	<nav>
+	   <div class="nav-wrapper">
+	     <a href="#" class="app-title">Alan's book app</a>
+	   </div>
+	 </nav>
+
+	{{#jquery-wrapper
+		query='.tabs'
+		method='tabs'
+	}}
+	<ul class="tabs tabs-fixed-width tab-demo">
+		<li class="tab"><a class="active" href="#" {{action 'books' on='click'}}>Books</a></li>
+	   	<li class="tab"><a href="#" {{action 'authors' on='click'}}>Authors</a></li>
+	   	<li class="tab"><a href="#" {{action 'shoppingCart' on='click'}}>Sales</a></li>
+	</ul>
+	{{/jquery-wrapper}}
+</div>
+
+
+{{outlet}}

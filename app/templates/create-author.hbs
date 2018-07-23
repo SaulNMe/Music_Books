@@ -1,0 +1,12 @@
+{{render-header2}}
+<div class="insertNew">
+	<h1>Insert New</h1>	
+<form {{action 'createAuthor' author on='submit'}}>
+		<p>First Name:   {{input type='text' value=firstName}}</p> 
+		<p>Last Name: {{input type='text' value=lastName}}</p> 
+		<p>Nickname: {{input type='text' value=nickname}}</p> 
+		<p>Age: {{input type='text' value=age}}</p> 
+		<br>
+		<button class="btn" type="submit" >Create Author</button>
+</form>
+</div>

@@ -1,41 +1,40 @@
-{{render-header}}
-
-	
-<p>
-</p>
 <div class="main-content">
 	{{#each model as |book|}}
+		{{#link-to 'detail' book.id}}
+
 		<div class="content">
+
 			<div class="content-img">
 					<img src={{book.imgUrl}}>
 			</div>
+
 			<div class="content-data">
-				<p>Name: 
-					<a href=>
-						{{#link-to 'detail' book.id}}
-							{{book.title}}
-						{{/link-to}}
-					</a>
-				</p>
-				<p>Author: 
-					<a href=>
-						{{#link-to 'detail' book.id}}
+				<div class="title-book">
+					<p> 
+						<a href="#">
+							{{#link-to 'detail' book.id}}
+								{{book.title}}
+							{{/link-to}}
+						</a>
+					</p>
+				</div>
+				<div class="author-book">
+					<p>
+						<a href="#">
+							{{#link-to 'detail' book.id}}
 							{{book.author.fullName}}
-						{{/link-to}}
-					</a> 
-				</p>
+							{{/link-to}}
+						</a> 
+					</p>
+				</div>
 			</div>
+			<div class="book-more">
+					<img src="https://d30y9cdsu7xlg0.cloudfront.net/png/384289-200.png" alt="">
+				</div>
 		</div>
+		{{/link-to}}
+
 	{{/each}}
 </div>
-<div class="insertNew">
-	<h1>Insert New</h1>	
-<form {{action 'createBook' book on='submit'}}>
-		<p>Title:   {{input type='text' value=title}}</p> 
-		<p>Author: {{input type='text' value=author}}</p> 
-		<p>Price: {{input type='text' value=price}}</p> 
-		<p>URL: {{input type='text' value=imgUrl}}</p> 
-		<br>
-		<button class="btn" type="submit" >Create Book</button>
-</form>
-</div>
+
+<button class="btn" {{action 'createBook'  on='click'}}>+</button>

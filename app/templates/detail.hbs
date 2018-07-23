@@ -1,28 +1,32 @@
-{{render-header}}
-
-	<div class="title"><h1>Book Details</h1></div>
+{{render-header2}}
 	<form {{action 'saveBook' model.musicBook on='submit'}}>
 		<div class="content">
+			<div class="content-book-img">
 				<img src={{model.musicBook.imgUrl}}>
-				<div class="data">
-				<p>Name: {{input type="text" value=model.musicBook.title }}</p>
-				{{!-- <p>Author: {{input type="d" value=model.musicBook.author.fullName}}</p> --}}
-				<p>
-					Author: {{model.musicBook.author.fullName}}
-					<button {{action 'showAuthors' on='click'}}>Cambiar Author</button>
+			</div>
+			<div class="data-book">
+				<p>Name: <br>
+					{{input type="text" value=model.musicBook.title class="inputs-book"}}</p>
+				<p>Author: <br>
+					{{model.musicBook.author.fullName}} <br>
+						<button {{action 'showAuthors' on='click'}}>Cambiar Author</button>
 				</p>
 				{{#if isChangingAuthor}}
-				<p>Selecciona un author</p>
+					<p>Selecciona un author</p>
 				{{#each model.authors as |author|}}
 					<p>
-					<a href="#" {{action 'selectAuthor' author on='click'}} >{{author.fullName}}</a>
+						<a href="#" {{action 'selectAuthor' author on='click'}} > {{author.fullName}}</a>
 					</p>
 				{{/each}}
 				{{/if}}
-				<p>Price: {{input type="text" value=model.musicBook.price }}</p>
-				<p>Url: {{input type="text" value=model.musicBook.imgUrl }} </p>
-				<button class="btn" {{action 'buyBook' model.book on='click'}}>Add to cart</button>
-				<button class="btn" type="submit" disabled={{if model.isSaving 'true' ''}} >Edit</button >
+				<p>Price: <br>
+					{{input type="number" value=model.musicBook.price class="inputs-book"}}
+				</p>
+				<p>Url: <br>
+					{{input type="text" value=model.musicBook.imgUrl class="inputs-book"}}
+				</p>
+				<button class="btn" {{action 'buyBook' model on='click'}}>Add to cart</button>
+				<button class="btn" type="submit" disabled={{if model.isSaving 'true' ''}} >Save</button >
 				<button class="btn" disabled={{if model.isSaving 'true' ''}} {{action 'deleteBook' model on='click'}}>
 					Delete
 				</button>

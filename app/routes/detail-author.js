@@ -7,6 +7,7 @@ export default Route.extend({
 	actions:{
 		saveAuthor(author){
 			author.save();
+			this.transitionTo('authors');
 		},
 		willTransition(){
 			let author = this.get('controller.model');
