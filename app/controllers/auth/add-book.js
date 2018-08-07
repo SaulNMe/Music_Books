@@ -15,15 +15,15 @@ export default Controller.extend({
 		
 		createBook(){
 			let title = this.get('title');
-			let author = this.get('model.musicBook.author.fullName');
+			let author = this.get('model.musicBook.author');
 			let price = this.get('price');
 			let imgUrl = this.get('imgUrl');
 			let newBook = this.store.createRecord('music-Book',{title,author,price,imgUrl});
 			newBook.save();
-			this.set('imgUrl','');
 			this.set('title','');
 			this.set('author','');
 			this.set('price','');
+			this.set('imgUrl','');
 			this.transitionToRoute('auth.books');
 		}
 	}

@@ -17,7 +17,7 @@ Router.map(function() {
   this.route('auth',{path: '/'}, function() {
     this.route('authors', function() {});
     this.route('shopping-cart');
-    this.route('books', function() {});
+    this.route('books',{path: '/'}, function() {});
     this.route('detail-book',{path: 'books/detail/:id'});
     this.route('detail-author',{path: 'authors/detail/:id'});
     this.route('add-book',{path: 'books/add-book'});
