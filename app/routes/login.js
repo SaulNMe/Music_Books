@@ -9,7 +9,7 @@ export default Route.extend({
 			// var password = this.get('password');
 			if (username === 'Loquillo' && password === 'elchido'){
 				this.get('currentUser').set('username',username);
-				this.transitionTo('main');
+				this.transitionTo('example');
 			} else {
 				alert('Access Denied');
 			}

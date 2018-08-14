@@ -24,6 +24,7 @@ Router.map(function() {
     this.route('add-author',{path: 'authors/add-author'});
     this.route('add-sale',{path: 'sales/add-sale'});
   });
+  this.route('example');
 });
 
 export default Router;

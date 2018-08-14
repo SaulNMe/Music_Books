@@ -9,5 +9,5 @@ export default ActiveModelAdapter.extend({
 	// 	console.log(underscored);
 	// 	return pluralize(underscored);
 	// },
-	host:'https://evening-cove-21405.herokuapp.com'
+	host:'https://still-garden-88285.herokuapp.com'
 });
