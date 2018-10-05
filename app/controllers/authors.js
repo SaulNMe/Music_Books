@@ -6,8 +6,8 @@ export default Controller.extend({
 		},
 		onAuthorDelete(author){
 			let answer = confirm('¿Estás seguro de que quieres eliminar este registro?');
-			if(answer === true){
-			author.destroyRecord();
+			if(answer){
+				author.destroyRecord();
 			}
 		}
 	}
